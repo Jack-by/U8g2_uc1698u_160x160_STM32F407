@@ -60,9 +60,9 @@ void MX_FSMC_Init(void)
   hsram1.Init.WriteBurst = FSMC_WRITE_BURST_DISABLE;
   hsram1.Init.PageSize = FSMC_PAGE_SIZE_NONE;
   /* Timing */
-  Timing.AddressSetupTime = 15;
-  Timing.AddressHoldTime = 5; //15
-  Timing.DataSetupTime = 5; //25
+  Timing.AddressSetupTime = 2; 
+  Timing.AddressHoldTime = 1; 
+  Timing.DataSetupTime = 11; 
   Timing.BusTurnAroundDuration = 15;
   Timing.CLKDivision = 16;
   Timing.DataLatency = 17;
@@ -76,6 +76,17 @@ void MX_FSMC_Init(void)
 
   /* USER CODE BEGIN FSMC_Init 2 */
 
+ /** STABILNIE I BISTRIE TIMINGI 
+  
+  Timing.AddressSetupTime = 2; 
+  Timing.AddressHoldTime = 1; 
+  Timing.DataSetupTime = 11; 
+  Timing.BusTurnAroundDuration = 15;
+  Timing.CLKDivision = 16;
+  Timing.DataLatency = 17;
+  
+  **/
+  
   /* USER CODE END FSMC_Init 2 */
 }
 

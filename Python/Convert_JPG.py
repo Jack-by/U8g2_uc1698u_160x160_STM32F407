@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
 """
-convert_to_c_array_any_size.py
+convert_to_c_array_any_size.py with optional gamma correction
 
 Usage:
-  python convert_to_c_array_any_size.py input.jpg output.h array_name [--width W] [--height H] [--no-resize]
+  python convert_to_c_array_any_size.py input.jpg output.h array_name [--width W] [--height H] [--no-resize] [--gamma G]
 
-If --width and --height provided, image will be resized to that size (unless --no-resize).
-If not provided, original image size is used.
-
-Packs 3 pixels -> 2 bytes:
- byte0 = R4 R3 R2 R1 R0 G5 G4 G3
- byte1 = G2 G1 G0 B4 B3 B2 B1 B0
-
-Writes C header with:
- - const uint8_t array_name[] = { ... };
- - const unsigned array_name_width, array_name_height;
- - const unsigned array_name_bytes_per_row;
- - const unsigned array_name_size; // total bytes
+If --gamma G provided (e.g. 2.2), performs gamma correction using simple power-law:
+ - linearize channels: C_lin = (C/255) ** G
+ - compute luminance in linear space using BT.709 weights
+ - apply inverse gamma: Y = (Y_lin) ** (1/G)
+ - map Y (0..1) -> 0..255 then quantize to 0..31
 """
 from PIL import Image
 import numpy as np
@@ -26,7 +19,7 @@ import argparse
 import textwrap
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Convert image to packed 5-bit grayscale C array")
+    p = argparse.ArgumentParser(description="Convert image to packed 5-bit grayscale C array (optional gamma)")
     p.add_argument("input", help="Input image (JPEG/PNG...)")
     p.add_argument("output", help="Output .h file")
     p.add_argument("array_name", help="Name of C array (e.g., image_data)")
@@ -34,6 +27,7 @@ def parse_args():
     p.add_argument("--height", type=int, help="Target height (pixels). If omitted, use image height.")
     p.add_argument("--no-resize", action="store_true", help="Do not resize the image; use its original size")
     p.add_argument("--bytes-per-line", type=int, default=12, help="Hex items per line in generated .h (readability)")
+    p.add_argument("--gamma", type=float, default=None, help="Gamma value for correction (e.g. 2.2). If omitted, no gamma applied.")
     return p.parse_args()
 
 def load_image(path):
@@ -43,7 +37,6 @@ def load_image(path):
 def resize_or_pad(img, target_w, target_h, no_resize=False):
     if no_resize:
         return img
-    # Resize preserving aspect ratio then center-pad if needed
     img_thumb = img.copy()
     img_thumb.thumbnail((target_w, target_h), Image.LANCZOS)
     if img_thumb.size == (target_w, target_h):
@@ -54,12 +47,35 @@ def resize_or_pad(img, target_w, target_h, no_resize=False):
     out.paste(img_thumb, (x,y))
     return out
 
-def rgb_to_luma_8bit(rgb_arr):
-    r = rgb_arr[...,0].astype(np.float32)
-    g = rgb_arr[...,1].astype(np.float32)
-    b = rgb_arr[...,2].astype(np.float32)
-    y = 0.299*r + 0.587*g + 0.114*b
-    return np.clip(y,0,255).astype(np.uint8)
+def rgb_to_luma_8bit_with_gamma(rgb_arr, gamma=None):
+    """
+    rgb_arr: uint8 array H,W,3
+    gamma: None or float G
+    returns uint8 luma 0..255
+    """
+    if gamma is None:
+        # original linear formula BT.601 mapping to 0..255
+        r = rgb_arr[...,0].astype(np.float32)
+        g = rgb_arr[...,1].astype(np.float32)
+        b = rgb_arr[...,2].astype(np.float32)
+        y = 0.299*r + 0.587*g + 0.114*b
+        return np.clip(y,0,255).astype(np.uint8)
+    else:
+        # use power-law gamma correction with LUT for speed
+        G = float(gamma)
+        invG = 1.0 / G
+        # BT.709 linear luminance weights
+        Wr, Wg, Wb = 0.2126, 0.7152, 0.0722
+        # build LUT: value -> linearized (0..1)
+        lut_lin = np.array([((i / 255.0) ** G) for i in range(256)], dtype=np.float32)  # C_lin
+        r_lin = lut_lin[rgb_arr[...,0]]
+        g_lin = lut_lin[rgb_arr[...,1]]
+        b_lin = lut_lin[rgb_arr[...,2]]
+        y_lin = Wr * r_lin + Wg * g_lin + Wb * b_lin  # 0..1
+        # inverse gamma
+        y_nl = np.power(np.clip(y_lin, 0.0, 1.0), invG)
+        y8 = np.clip((y_nl * 255.0), 0, 255).astype(np.uint8)
+        return y8
 
 def quantize5(y8):
     return ((y8.astype(np.uint16) * 31 + 127) // 255).astype(np.uint8)
@@ -72,9 +88,9 @@ def pack_triplet(r5, g5, b5):
     byte1 = (((g & 0x07) << 5) | (b & 0x1F)) & 0xFF
     return byte0 & 0xFF, byte1
 
-def convert_image_to_bytes(img):
+def convert_image_to_bytes(img, gamma=None):
     arr = np.array(img)  # H,W,3
-    luma = rgb_to_luma_8bit(arr)
+    luma = rgb_to_luma_8bit_with_gamma(arr, gamma=gamma)
     q5 = quantize5(luma)
     H,W = q5.shape
     pad = (3 - (W % 3)) % 3
@@ -145,12 +161,11 @@ def main():
     if not args.no_resize:
         img_prepared = resize_or_pad(img, target_w, target_h, no_resize=False)
     else:
-        # If no resize but target differs, we use original image size
         img_prepared = img
         target_w = img_prepared.width
         target_h = img_prepared.height
 
-    data_bytes, padded_width = convert_image_to_bytes(img_prepared)
+    data_bytes, padded_width = convert_image_to_bytes(img_prepared, gamma=args.gamma)
     write_c_header(args.output, args.array_name, data_bytes, target_w, target_h, padded_width, args.bytes_per_line)
 
 if __name__ == "__main__":

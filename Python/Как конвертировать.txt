@@ -1,0 +1,16 @@
+
+Конвертор JPEG фото в формат 64k RGB для отображения в расширенном режиме на мнохромном дисплее
+ERC160160-2 в градациях серого. Имеется 32 градации в uc1698u.
+
+Примеры запуска:
+
+Использовать оригинальный размер (например, 50×60):
+python Convert_JPG.py photo.jpg photo.h img50x60 --no-resize
+Привести к 50×60 (масштабировать и центрировать):
+python Convert_JPG.py photo.jpg photo.h img50x60 --width 50 --height 60
+Файл .h теперь содержит:
+
+const uint8_t image_data[] = { ... };
+const unsigned image_data_width, image_data_height;
+const unsigned image_data_bytes_per_row; // полезно для записи
+const unsigned image_data_size; // общий размер в байтах
