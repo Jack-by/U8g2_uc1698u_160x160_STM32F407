@@ -1027,6 +1027,8 @@ void init(void)
     		display_white();
 
 	write_com(0xad);			//display on,select on/off mode.Green Enhance mode disable
+//        write_com(0xaf);			//display on,select 32 scale mode.Green Enhance mode disable        
+                
 }
 
 
@@ -1073,13 +1075,11 @@ void text_dot(uint8_t data1, uint8_t data2)
      {
 		for(j=0;j<81;j++)
 		{ 
-            write_data(data1);      
-	
+                  write_data(data1);      
 		}
 		for(j=0;j<81;j++)
 		{
-			write_data(data2); 
-
+                  write_data(data2); 
 		}
      }
 }
@@ -1133,7 +1133,7 @@ uint8_t h11,h12,h13,h14,h15,h16,h17,h18,d1,d2,d3,d4;
 		d2=h13|h14;
 		d3=h15|h16;
 		d4=h17|h18;
-
+                
 		write_data(d1);
 		write_data(d2);
 		write_data(d3);
@@ -1152,7 +1152,6 @@ void display_gray(void)
 			b=b+0x11;
 		}
 		write_data(00);//There are 162-160=2 segment need to write data
-
 	}
 	write_com(0xad);
 

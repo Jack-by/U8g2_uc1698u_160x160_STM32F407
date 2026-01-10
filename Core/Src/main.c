@@ -121,8 +121,15 @@ int main(void)
     
      display_white();
     HAL_Delay(DALAY_TIME);
-    adj_Contrast (170 );
+    adj_Contrast (200 );
     HAL_Delay(DALAY_TIME);
+    
+    
+//    display_gray( );
+//    HAL_Delay(3000);
+    
+    
+    
     
   /* USER CODE END 2 */
 
@@ -151,6 +158,8 @@ int main(void)
 //    HAL_Delay(DALAY_TIME);
 //    display_address();
     
+   
+
     disppic(pic_data);
     HAL_Delay(DALAY_TIME);
     
@@ -183,10 +192,10 @@ int main(void)
 //    write_com(0xa6);
     
     display_address();
-    display_white();
+//    display_white();
     HAL_Delay(DALAY_TIME);
-    adj_Contrast (160 );
-    HAL_Delay(DALAY_TIME);
+//    adj_Contrast (160 );
+//    HAL_Delay(DALAY_TIME);
     
     /* USER CODE END WHILE */
 
