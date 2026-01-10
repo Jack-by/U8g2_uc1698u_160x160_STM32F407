@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "E:\Microcontroller\stm32\F407_FSMC_2\EWARM\settings\F407_FSMC_2.F407_FSMC_2.general.xcl" --backend -f "E:\Microcontroller\stm32\F407_FSMC_2\EWARM\settings\F407_FSMC_2.F407_FSMC_2.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\settings\F407_FSMC_2.F407_FSMC_2.general.xcl" --backend -f "E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\settings\F407_FSMC_2.F407_FSMC_2.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "E:\Microcontroller\stm32\F407_FSMC_2\EWARM\settings\F407_FSMC_2.F407_FSMC_2.general.xcl" --debug_file=$debugfile --backend -f "E:\Microcontroller\stm32\F407_FSMC_2\EWARM\settings\F407_FSMC_2.F407_FSMC_2.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\settings\F407_FSMC_2.F407_FSMC_2.general.xcl" --debug_file=$debugfile --backend -f "E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\settings\F407_FSMC_2.F407_FSMC_2.driver.xcl" 
 }

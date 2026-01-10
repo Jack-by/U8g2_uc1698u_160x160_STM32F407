@@ -1,57 +1,57 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.50.1.380/W64 for ARM                  10/Jan/2026  17:48:12
+# IAR ELF Linker V9.50.1.380/W64 for ARM                  10/Jan/2026  17:57:14
 # Copyright 2007-2023 IAR Systems AB.
 #
 #    Output file  =
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out
 #    Map file     =
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\List\F407_FSMC_2.map
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\List\F407_FSMC_2.map
 #    Command line =
 #        -f
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out.rsp
-#        (E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\crc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\fsmc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\gpio.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\main.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir\startup_stm32f407xx.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_cortex.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_crc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_dma.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_dma_ex.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_exti.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash_ex.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash_ramfunc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_gpio.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\stm32f4xx_hal_msp.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_nand.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_nor.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pccard.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pwr.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pwr_ex.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_rcc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_rcc_ex.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_sram.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\stm32f4xx_it.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_exti.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_fsmc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_gpio.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_rcc.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_utils.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir\system_stm32f4xx.o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir\uc1698u.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out.rsp
+#        (E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\crc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\fsmc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\gpio.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\main.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir\startup_stm32f407xx.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_cortex.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_crc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_dma.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_dma_ex.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_exti.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash_ex.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_flash_ramfunc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_gpio.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\stm32f4xx_hal_msp.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_nand.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_nor.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pccard.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pwr.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_pwr_ex.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_rcc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_rcc_ex.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_hal_sram.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir\stm32f4xx_it.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_exti.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_fsmc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_gpio.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_rcc.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir\stm32f4xx_ll_utils.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir\system_stm32f4xx.o
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir\uc1698u.o
 #        --no_out_extension -o
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\List\F407_FSMC_2.map
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\List\F407_FSMC_2.map
 #        --config
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM/stm32f407xx_flash.icf
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM/stm32f407xx_flash.icf
 #        --semihosting --entry __iar_program_start --vfe --text_out locale
 #        --cpu=Cortex-M4 --fpu=VFPv4_sp) --dependencies=n
-#        E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out.iar_deps
+#        E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Exe\F407_FSMC_2.out.iar_deps
 #
 ###############################################################################
 
@@ -274,12 +274,12 @@ command line/config:
     -------------------------------------------------
     Total:
 
-E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir: [1]
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir: [1]
     system_stm32f4xx.o           16        4        4
     -------------------------------------------------
     Total:                       16        4        4
 
-E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir: [2]
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir: [2]
     crc.o                        72                 8
     fsmc.o                      280                84
     gpio.o                      120
@@ -289,12 +289,12 @@ E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_1324798916873145
     -------------------------------------------------
     Total:                    1'096                92
 
-E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir: [3]
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir: [3]
     startup_stm32f407xx.o       732
     -------------------------------------------------
     Total:                      732
 
-E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir: [4]
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir: [4]
     stm32f4xx_hal.o             204        5        9
     stm32f4xx_hal_cortex.o      300
     stm32f4xx_hal_crc.o          36
@@ -306,7 +306,7 @@ E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_
     -------------------------------------------------
     Total:                    1'892        5        9
 
-E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir: [5]
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir: [5]
     uc1698u.o                 1'172   12'941        1
     -------------------------------------------------
     Total:                    1'172   12'941        1
@@ -581,11 +581,11 @@ write_com                0x800'3393    0x8  Code  ??  uc1698u.o [5]
 write_data               0x800'339b    0x6  Code  ??  uc1698u.o [5]
 
 
-[1] = E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir
-[2] = E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir
-[3] = E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir
-[4] = E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir
-[5] = E:\Microcontroller\stm32\F407_FSMC_2\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir
+[1] = E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\CMSIS_6603591812247902717.dir
+[2] = E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\Core_13247989168731456611.dir
+[3] = E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\EWARM_18443280873093131863.dir
+[4] = E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\STM32F4xx_HAL_Driver_1244631019742807970.dir
+[5] = E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\F407_FSMC_2\Obj\uc1698u_4896478760023267370.dir
 [6] = dl7M_tln.a
 [7] = m7M_tls.a
 [8] = rt7M_tl.a
