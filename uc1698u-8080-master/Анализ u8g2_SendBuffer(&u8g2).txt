@@ -1,0 +1,37 @@
+Исследуем команду        u8g2_SendBuffer(&u8g2)
+Что и как приходит при обращеии к железу:
+1.	u8x8_byte_hw_spi (msg U8X8_MSG_BYTE_START_TRANSFER) -> u8x8_gpio_and_delay_template(msg U8X8_MSG_GPIO_CS)
+															u8x8_gpio_and_delay_template(msg U8X8_MSG_DELAY_NANO)
+															
+2.	u8x8_byte_hw_spi (msg U8X8_MSG_BYTE_SET_DC)	-> u8x8_gpio_and_delay_template(msg U8X8_MSG_GPIO_DC) включили режим команд
+
+3.	u8x8_byte_hw_spi (msg U8X8_MSG_BYTE_SEND)			 											
+
+4.	u8x8_byte_hw_spi (msg U8X8_MSG_BYTE_SET_DC)	-> u8x8_gpio_and_delay_template(msg U8X8_MSG_GPIO_DC) выключили режим команд
+
+.... Затем парочка команд ....
+
+6?	Приходит буфер 160 байт на отправку u8x8_byte_hw_spi(msg U8X8_MSG_BYTE_SEND 160 байт)
+
+
+
+
+
+
+
+uint8_t u8x8_d_uc1611_common(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr) u8x8_d_uc1611.c самая нижняя функция отправки,
+её вызывает более высокая функция 
+uint8_t u8x8_d_uc1611_cg160160(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr) u8x8_d_uc1611.c
+
+
+
+7.	u8x8_byte_hw_spi(msg U8X8_MSG_BYTE_END_TRANSFER)
+	нанозадержка
+	и конец посылки u8x8_gpio_and_delay_template(msg U8X8_MSG_GPIO_CS) установить CS
+	
+	
+Затем много раз повторяется отправка буфера заново, начиная с пункта 1.
+
+
+Вывод: Любая передача в железо начинается с функции u8x8_byte_hw_spi. Это она уже дёргает доп функцию u8x8_gpio_and_delay_template!!!
+ 

@@ -23,6 +23,8 @@ E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM/../Drivers/CMSIS/Include
 -I
 E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\..\Drivers\uc1698u
 -I
+E:\Microcontroller\stm32\uc1698u_160x160_F407\EWARM\..\Drivers\u8g2
+-I
 C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc\c\aarch32
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc
@@ -40,6 +42,8 @@ E:\Microcontroller\stm32\uc1698u_160x160_F407\Drivers\CMSIS\Device\ST\STM32F4xx\
 E:\Microcontroller\stm32\uc1698u_160x160_F407\Drivers\CMSIS\Include
 -I
 E:\Microcontroller\stm32\uc1698u_160x160_F407\Drivers\uc1698u
+-I
+E:\Microcontroller\stm32\uc1698u_160x160_F407\Drivers\u8g2
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -295,6 +299,7 @@ E:\Microcontroller\stm32\uc1698u_160x160_F407\Drivers\uc1698u
 -D__DEF_STACK_MEM_INDEX__=0
 -D__PRAGMA_PACK_ON__=1
 -D__MULTIPLE_INHERITANCE__=1
+-D__FOR_DEBUG__=
 -D__AAPCS_VFP__=1
 -D__ARM4TM__=4
 -D__ARM5TM__=5

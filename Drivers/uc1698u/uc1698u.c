@@ -3803,8 +3803,8 @@ void init(void)
 	delayms(20);
 	RESET_OFF;
 	delayms(200);
-	write_com(0xe2); // set system reset
-        delayms(100);  //delayms 200ms
+              write_com(0xe2); // set system reset
+              delayms(100);  //delayms 200ms
 
  	/*power control*/					
 	write_com(0xe9);			//Bias Ratio:1/10 bias

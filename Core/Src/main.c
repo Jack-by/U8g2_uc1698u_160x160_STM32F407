@@ -26,7 +26,8 @@
 /* USER CODE BEGIN Includes */
 
 #include "uc1698u.h"  
-    
+#include "u8g2.h"
+#include "u8g_arm.h"
     
 /* USER CODE END Includes */
 
@@ -57,6 +58,8 @@
    extern const uint8_t img159x160[];
    extern const uint8_t img[];
     
+   u8g2_t u8g2;
+   
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,12 +114,36 @@ int main(void)
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
+  
+  
+  
+      u8g2_Setup_uc1611_cg160160_f(&u8g2, U8G2_R2, u8x8_byte_hw_fsmc, u8x8_gpio_and_delay_template);     
+      u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
+      u8g2_SetPowerSave(&u8g2, 0); // wake up display
+//      u8g2_ClearDisplay(&u8g2);       
+//      u8g2_SetContrast(&u8g2, 40);   
+      u8g2_SetFontMode(&u8g2, 0);  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 #define DALAY_TIME      500 
   
   
   
-    init();
+//    init();
     
     
      display_white();
@@ -133,7 +160,7 @@ int main(void)
 //    Data_processing(0xFF);
     
   write_com(0x81);			//electronic potentionmeter
-  write_com(230);
+  write_com(200);
     
 //    Set_window(5, 5, 127, 127);
 //    display_start_window(6, 6);
@@ -151,15 +178,21 @@ int main(void)
 //     write_data(0xFF);
     while(1)
     {
+     u8g2_ClearBuffer(&u8g2);
+     u8g2_DrawLine(&u8g2, 0, 0, 100, 100);
+     u8g2_SendBuffer(&u8g2);
+      
+     HAL_Delay(500            );
+      
      disppic_enh(img);   
      write_com(0xa7);
      
-     HAL_Delay(500);
+     HAL_Delay(1000);
      
      disppic_enh(img159x160);   
      write_com(0xa7);
      
-      HAL_Delay(500);
+      HAL_Delay(1000);
       
     }
     
