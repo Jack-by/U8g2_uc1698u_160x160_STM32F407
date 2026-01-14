@@ -245,19 +245,32 @@ int main(void)
   
   
   
-//      u8g2_Setup_uc1611_cg160160_f(&u8g2, U8G2_R2, u8x8_byte_hw_fsmc, u8x8_gpio_and_delay_template);     
-//      u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
-//      u8g2_SetPowerSave(&u8g2, 0); // wake up display
-////      u8g2_ClearDisplay(&u8g2);       
-////      u8g2_SetContrast(&u8g2, 40);   
-//      u8g2_SetFontMode(&u8g2, 0);  
+      u8g2_Setup_uc1611_cg160160_f(&u8g2, U8G2_R0, u8x8_byte_hw_fsmc, u8x8_gpio_and_delay_template);     
+      u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
+      u8g2_SetPowerSave(&u8g2, 0); // wake up display
+//      u8g2_ClearDisplay(&u8g2);       
+//      u8g2_SetContrast(&u8g2, 40);   
+      u8g2_SetFontMode(&u8g2, 0);  
   
+   display_white();
+      
+      
+  uint8_t i=0;    
+while(1)
+{
   
+u8g2_ClearBuffer(&u8g2);
+
+u8g2_DrawBox(&u8g2, i, i, 15, 15);
+//u8g2_DrawBox(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t w, u8g2_uint_t h)
+
+u8g2_SendBuffer(&u8g2);
   
-  
-  
-  
-  
+
+if (i<144) i++; else i=0;
+HAL_Delay(100);
+
+} 
   
   
   
@@ -279,7 +292,7 @@ int main(void)
 
     
   write_com(0x81);			//electronic potentionmeter
-  write_com(150);
+  write_com(180);
     
   
    init_sprites();
