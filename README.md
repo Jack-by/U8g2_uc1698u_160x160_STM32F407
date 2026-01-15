@@ -6,4 +6,8 @@ The connection diagram is clear from the STM32CubeMX project.
 Additional information is available in the connection diagram.
 \uc1698u_160x160_F407\uc1698u-8080-master\docs\ERC160160_MCU_Interfacing.pdf
 
-![alt text](image.png)
+![alt text](image-2.png)
+
+Display connection diagram for the STM32F407VE controller.
+![alt text](image-3.png) 
+![alt text](image-4.png)

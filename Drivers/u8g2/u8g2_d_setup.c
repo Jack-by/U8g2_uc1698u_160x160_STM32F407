@@ -5101,7 +5101,7 @@ void u8g2_Setup_uc1611_cg160160_f(u8g2_t *u8g2, const u8g2_cb_t *rotation, u8x8_
   uint8_t *buf;
   u8g2_SetupDisplay(u8g2, u8x8_d_uc1611_cg160160, u8x8_cad_001, byte_cb, gpio_and_delay_cb);
   buf = u8g2_m_20_20_f(&tile_buf_height);
-  u8g2_SetupBuffer(u8g2, buf, tile_buf_height, u8g2_ll_hvline_vertical_top_lsb, rotation);
+  u8g2_SetupBuffer(u8g2, buf, tile_buf_height, u8g2_ll_hvline_horizontal_right_lsb, rotation);
 }
 /* uc1611 */
 /* uc1611 1 */

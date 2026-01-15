@@ -1983,14 +1983,5 @@
                 <name>$PROJ_DIR$\..\Drivers\u8g2\u8x8_u8toa.c</name>
             </file>
         </group>
-        <group>
-            <name>uc1698u</name>
-            <file>
-                <name>$PROJ_DIR$\..\Drivers\uc1698u\uc1698u.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Drivers\uc1698u\uc1698u.h</name>
-            </file>
-        </group>
     </group>
 </project>
